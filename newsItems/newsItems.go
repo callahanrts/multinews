@@ -10,14 +10,26 @@ import (
 )
 
 // Data Structures
+
+//Maybe parse this all out at some point	
 type Item struct {
+	//Shared
 	Title string
 	Url string
+
+	//Hacker News
 	CommentCount int
-	Comments int `json:"num_comments"`
 	Points int
 	PostedAgo string
 	PostedBy string
+
+	// Reddit
+	Comments int `json:"num_comments"`
+	Subreddit string
+	Score int
+	Thumbnail string
+	//Created string
+	Author string
 }
 
 type Response struct {
@@ -44,6 +56,7 @@ func Get(jsonUrl string, jsonType string) ([]Item, error) {
 	// Shut down tcp connection
 	defer resp.Body.Close() 
 	if resp.StatusCode != http.StatusOK {
+		log.Print("error: %s", jsonType)
 		return nil, errors.New(resp.Status)
 	}
 
