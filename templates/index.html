@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app>
+<head>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="all" />
+
+  <!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  <script type="text/javscript" src="assets/js/application.js"></script>
+  <title>Multinews</title>
+</head>
+<body>
+		<div class="menu-bar"><button type="button" class="btn btn-primary">Home</button></div>
+		<div class="news-list"></div>
+		<div calss="preview"></div>
+
+		<div ng-controller="TestCtrl">
+			<button type="button" class="btn btn-primary" ng-click="testing()">Home</button>
+		</div>
+</body>
+
+
+</html>
+
+<script type="text/javascript">
+	function TestCtrl($scope) {
+		$scope.todos = [
+		{text:'learn angular', done:true},
+		{text:'build an angular app', done:false}];
+
+		$scope.testing = function() {
+			console.log("testing")
+		};
+	}
+</script>
