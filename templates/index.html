@@ -2,8 +2,8 @@
 <html ng-app>
 <head>
   <!-- Stylesheets -->
-  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 
   <!-- Includes --> 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
@@ -20,11 +20,38 @@
   <title>Multinews</title>
 </head>
 <body ng-controller="NewsController">
-	
-		<div class="menu-bar">
-			<button type="button" class="btn btn-primary" ng-click="getHackerNews()">Home</button>
-		</div><!--  menu bar  -->
-		
+
+		<nav class="menu-bar navbar navbar-inverse" role="navigation">
+		  <!-- Brand and toggle get grouped for better mobile display -->
+		  <div class="navbar-header">
+		    <a class="navbar-brand" href="javascript:void(0)">Multinews</a>
+		  </div>
+
+		  <!-- Collect the nav links, forms, and other content for toggling -->
+		  <div class="collapse navbar-collapse navbar-ex1-collapse">
+		    <ul class="nav navbar-nav">
+		      <li class="dropdown">
+		        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><span ng-bind="source"></span><b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		          <li><a href="javascript:void(0)" ng-click="setSource('Hacker News ')">Hacker News</a></li>
+		          <li><a href="javascript:void(0)" ng-click="setSource('Reddit ')">Reddit</a></li>
+		          <li><a href="javascript:void(0)" ng-click="setSource('RSS ')">RSS</a></li>
+		        </ul>
+		      </li>
+		    </ul>
+		    <!-- Reddit add subreddit input -->
+		    <!-- form class="navbar-form navbar-left" role="search">
+		      <div class="form-group">
+		        <input type="text" class="form-control" placeholder="Add Subreddit">
+		      </div>
+		      <button type="submit" class="btn btn-default">Add</button>
+		    </form> -->
+		    <!-- <ul class="nav navbar-nav navbar-right">
+		      Right shit
+		    </ul> -->
+		  </div><!-- /.navbar-collapse -->
+		</nav> <!-- End navbar -->
+
 		<div class="content">
 			<div class="news-list" >
 				<div class="news-item" ng-repeat="item in news">	
