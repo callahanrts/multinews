@@ -9,9 +9,12 @@ function NewsController($scope) {
 	        $scope.$apply();
 	      }  
 		  });
-	}
+	};
 
-	$scope.showInPreview = function() { 
-		
-	}
+	$scope.showInPreview = function(url) { 
+		window.frames.preview.location.replace(url);
+		console.log('show in preview');
+	};	
+
+	$scope.getHackerNews();
 }
