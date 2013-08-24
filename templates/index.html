@@ -10,7 +10,7 @@
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  
+
   <!-- Scripts -->
 	<script type="text/javascript" src="assets/js/application.js"></script>
 
@@ -28,12 +28,12 @@
 		<div class="content">
 			<div class="news-list" >
 				<div class="news-item" ng-repeat="item in news">	
-					<p ng-bind="item.Title" ng-click="showInPreview()"></p>
+					<p ng-bind="item.Title" ng-click="showInPreview(item.Url)"></p>
 				</div>
 			</div> <!-- news-list -->
 			
 			<div class="preview">
-				asdf<!-- bind iframe in here <div class="news-item" ng-bind="">	 -->
+				<iframe src="" name="preview"></iframe>
 			</div> <!-- preview -->
 		</div> <!-- content -->
 </body>
