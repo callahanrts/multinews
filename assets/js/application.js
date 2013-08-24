@@ -1,9 +1,5 @@
-function TestCtrl($scope) {
-	$scope.todos = [
-	{text:'learn angular', done:true},
-	{text:'build an angular app', done:false}];
-
-	$scope.testing = function() {
-		console.log("testing")
-	};
+window.onload = function() {
+	$(window).resize(function(){
+		$('.content').height($(window).height() - 54);
+	}).resize(); 
 }

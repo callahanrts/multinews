@@ -5,20 +5,47 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="all" />
 
+  <!-- Includes --> 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"></script>
+  
   <!-- Scripts -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-  <script type="text/javascript" src="assets/js/application.js"></script>
+	<script type="text/javascript" src="assets/js/application.js"></script>
+
+	<!-- Controllers -->
+  <script type="text/javascript" src="assets/js/controllers/news_controller.js"></script>
+
   <title>Multinews</title>
 </head>
-<body>
+<body ng-controller="NewsController">
 	
-		<div class="menu-bar"><button type="button" class="btn btn-primary">Home</button></div>
-		<div class="news-list"></div>
-		<div calss="preview"></div>
-
-		<div ng-controller="TestCtrl">
-			<button type="button" class="btn btn-primary" ng-click="testing()">Home</button>
-		</div>
-
+		<div class="menu-bar">
+			<button type="button" class="btn btn-primary" ng-click="getHackerNews()">Home</button>
+		</div><!--  menu bar  -->
+		
+		<div class="content">
+			<div class="news-list" >
+				<div class="news-item" ng-repeat="item in news">	
+					<p ng-bind="item.Title" ng-click="showInPreview()"></p>
+				</div>
+			</div> <!-- news-list -->
+			
+			<div class="preview">
+				asdf<!-- bind iframe in here <div class="news-item" ng-bind="">	 -->
+			</div> <!-- preview -->
+		</div> <!-- content -->
 </body>
 </html>
+
+
+<!-- Nav bar configurations. Do an animation between them 
+
+Hacker news | Reddit | RSS
+< | Hacker news  (drop down 20, 50, 100, 200, 500...)
+< | Reddit       (drop down subredits)
+ -->
+
+
+
