@@ -7,11 +7,5 @@ window.onload = function() {
 		$('.preview').width($(window).width() - $('.news-list').width());
 	}).resize();
 
-	$('.subreddits').hover(function(){
-		$('.remove-subreddit').show();
-		console.log('hover');
-	}, function() {
-		$('.remove-subreddit').hide();
-		console.log('unhover');
-	})
+	$('.add-subreddit').css('padding-left', 0);
 }

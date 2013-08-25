@@ -12,11 +12,11 @@ function NewsController($scope) {
   		subreddit: [
   			{ 
   				title: 'Programming ',
-					url: '/r/programming'
+					url: '/r/programming/.json'
 				},
 				{
 					title: 'Pics ', 
-					url: '/r/pics'
+					url: '/r/pics/.json'
 				} 
 			]
   	}, 
@@ -29,8 +29,10 @@ function NewsController($scope) {
   
   $scope.source = $scope.news[0];
 
-	$scope.getNews = function() {
-		$.get('/news', { url: $scope.source.url, type: $scope.source.type })
+	$scope.getNews = function(new_url) {
+		var url = new_url || $scope.source.url
+		console.log(url);
+		$.get('/news', { url: url, type: $scope.source.type })
 		  .done(function(data) {
 			 	$scope.articles = JSON.parse(data);
 			 	if (!$scope.$$phase) {
@@ -39,9 +41,12 @@ function NewsController($scope) {
 		  });
 	};
 
-	$scope.showInPreview = function(url) { 
-		window.frames.preview.location.replace(url);
-		console.log('show in preview');
+	$scope.loadSubreddit = function(url) {
+		$scope.getNews("http://www.reddit.com" + url);
+	}	
+
+	$scope.showInPreview = function(article) { 
+		window.frames.preview.location.replace(article.Url);
 	};	
 
 	$scope.setSource = function(new_source) {
@@ -66,19 +71,20 @@ function NewsController($scope) {
 	$scope.addSubreddit = function() {
 		var subreddit = {};		
 		subreddit.title = $scope.input_subreddit;
-		subreddit.url = "/r/" + $scope.input_subreddit;
+		subreddit.url = "/r/" + $scope.input_subreddit + "/.json";
 		$scope.input_subreddit = '';
 		$scope.source.subreddit.push(subreddit);
 	}
 
-	$scope.removeSubreddit = function(subreddit) {
-		console.log(subreddit)
+	$scope.removeSubreddit = function(remove_reddit) {
+		index = $scope.source.subreddit.indexOf(remove_reddit);
+		$scope.source.subreddit.splice(index, 1);
+		console.log($scope.source);
 	}
 
 	$scope.refresh = function() {
 		$scope.getNews();
 	}
 
-	//TODO: uncomment this when done with development
-	//$scope.getHackerNews();
+	//TODO: load default list of articles
 }
