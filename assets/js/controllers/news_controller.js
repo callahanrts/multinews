@@ -31,7 +31,6 @@ function NewsController($scope) {
 
 	$scope.getNews = function(new_url) {
 		var url = new_url || $scope.source.url
-		console.log(url);
 		$.get('/news', { url: url, type: $scope.source.type })
 		  .done(function(data) {
 			 	$scope.articles = JSON.parse(data);
@@ -63,7 +62,6 @@ function NewsController($scope) {
 					$scope.source = $scope.news[2];
 					break;
 			}
-			console.log($scope.source, $scope.news[1])
 			$scope.refresh() 
 		} // if source needs to change
 	}
@@ -79,7 +77,6 @@ function NewsController($scope) {
 	$scope.removeSubreddit = function(remove_reddit) {
 		index = $scope.source.subreddit.indexOf(remove_reddit);
 		$scope.source.subreddit.splice(index, 1);
-		console.log($scope.source);
 	}
 
 	$scope.refresh = function() {
