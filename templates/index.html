@@ -46,7 +46,7 @@
 		        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><span ng-bind="source.default_subreddit.title"></span><b class="caret"></b></a>
 		        <ul class="dropdown-menu">
 		        	<li ng-repeat="item in source.subreddit">
-		        		<a href="javascript:void(0)" ng-click="loadSubreddit(item.url)"><span ng-bind="item.title"></span><span class="remove-subreddit glyphicon glyphicon-remove" ng-click="removeSubreddit(item)"></span></a>
+		        		<a href="javascript:void(0)" ng-click="loadSubreddit(item)"><span ng-bind="item.title"></span><span class="remove-subreddit glyphicon glyphicon-remove" ng-click="removeSubreddit(item)"></span></a>
 		        	</li>
 		        </ul>
 		      </li> <!-- pick a subreddit dropdown -->
@@ -70,8 +70,38 @@
 
 		<div class="content">
 			<div class="news-list" >
-				<div class="news-item" ng-repeat="article in articles">	
-					<p ng-bind="article.Title" ng-click="showInPreview(article)"></p>
+				<div class="news-item" ng-repeat="article in articles" ng-click="showInPreview(article)">	
+					<p class="news-title" ng-bind="article.Title"></p>
+					<div class="hackerNewsItem" ng-hide="source.type != 'hackerNews'">
+						<div class="news-author">
+							<span ng-bind="article.PostedAgo"></span> by  
+							<span ng-bind="article.PostedBy"></span>
+						</div>
+
+						<div class="news-secondary">
+							<span class="glyphicon glyphicon-thumbs-up"></span>
+							<span ng-bind="article.Points" class="pts"></span> 
+							
+							<span class="glyphicon glyphicon-comment"></span>
+							<span ng-bind="article.CommentCount"></span> 
+						</div>
+					</div>
+					
+					<div class="redditItem" ng-hide="source.type != 'reddit'">
+						<p class="news-secondary" ng-bind="article.Comments"></p> 
+						<div class="news-author">
+							<span ng-bind="article.Author"></span> on   
+							<span ng-bind="article.Subreddit"></span>
+						</div>
+
+						<div class="news-secondary">
+							<span class="glyphicon glyphicon-thumbs-up"></span>
+							<span ng-bind="article.Score" class="pts"></span> 
+							
+							<span class="glyphicon glyphicon-comment"></span>
+							<span ng-bind="article.num_comments"></span> 
+						</div> <!-- news-secondary -->
+					</div> <!-- reddit item -->
 				</div>
 			</div> <!-- news-list -->
 			
