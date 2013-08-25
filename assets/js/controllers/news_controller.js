@@ -31,17 +31,20 @@ function NewsController($scope) {
 
 	$scope.getNews = function(new_url) {
 		var url = new_url || $scope.source.url
+		$scope.articles = [];
 		$.get('/news', { url: url, type: $scope.source.type })
 		  .done(function(data) {
 			 	$scope.articles = JSON.parse(data);
 			 	if (!$scope.$$phase) {
 	        $scope.$apply();
+	        $type = $scope.source.type;
 	      }  
 		  });
 	};
 
-	$scope.loadSubreddit = function(url) {
-		$scope.getNews("http://www.reddit.com" + url);
+	$scope.loadSubreddit = function(subreddit) {
+		$scope.getNews("http://www.reddit.com" + subreddit.url);
+		$scope.source.default_subreddit = subreddit;
 	}	
 
 	$scope.showInPreview = function(article) { 
@@ -53,7 +56,7 @@ function NewsController($scope) {
 			switch(new_source) {
 				case  "reddit":
 					$scope.source = $scope.news[1];
-					$scope.source.default_subreddit = $scope.news[1].subreddit[0] 
+					$scope.source.default_subreddit = $scope.news[1].subreddit[0];
 					break;
 				case "hackerNews": 
 					$scope.source = $scope.news[0];
