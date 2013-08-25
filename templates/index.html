@@ -2,8 +2,8 @@
 <html ng-app>
 <head>
   <!-- Stylesheets -->
-  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 
   <!-- Includes --> 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
@@ -20,15 +20,58 @@
   <title>Multinews</title>
 </head>
 <body ng-controller="NewsController">
-	
-		<div class="menu-bar">
-			<button type="button" class="btn btn-primary" ng-click="getHackerNews()">Home</button>
-		</div><!--  menu bar  -->
-		
+
+		<nav class="menu-bar navbar navbar-inverse" role="navigation">
+		  <!-- Brand and toggle get grouped for better mobile display -->
+		  <div class="navbar-header">
+		    <a class="navbar-brand" href="javascript:void(0)">Multinews</a>
+		  </div>
+
+		  <!-- Collect the nav links, forms, and other content for toggling -->
+		  <div class="collapse navbar-collapse navbar-ex1-collapse">
+		    <ul class="nav navbar-nav">
+		      <li class="dropdown">
+		        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><span ng-bind="source.title"></span><b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		          <li ng-repeat="location in news">
+		          	<a href="javascript:void(0)" ng-bind="location.title" ng-click="setSource(location.type)"></a>
+		          </li>
+		        </ul>
+		      </li>
+		      <li>
+		      	<a href="javascript:void(0)" ng-click="refresh()"><span class="glyphicon glyphicon-refresh"></span></a>
+		      </li>
+
+		      <li class="dropdown" ng-hide="!source.subreddit">
+		        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><span ng-bind="source.default_subreddit.title"></span><b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		        	<li ng-repeat="item in source.subreddit">
+		        		<a href="javascript:void(0)" ng-click="loadSubreddit(item.url)"><span ng-bind="item.title"></span><span class="remove-subreddit glyphicon glyphicon-remove" ng-click="removeSubreddit(item)"></span></a>
+		        	</li>
+		        </ul>
+		      </li> <!-- pick a subreddit dropdown -->
+		      <li ng-hide="!source.subreddit" >
+			      <p class="navbar-text"> or </p>
+
+		      	<form class="navbar-form navbar-left" role="search">
+				      <div class="form-group">
+				        <input type="text" class="subreddit-input form-control" placeholder="Add Subreddit" ng-model="input_subreddit">
+				      </div>
+		    		</form> <!-- Reddit add subreddit input -->
+		      </li> <!-- hide if no subreddit -->
+		      <li ng-hide="!source.subreddit">
+				    <a href="javascript:void(0)" ng-click="addSubreddit()" class="add-subreddit">Add</a>
+		      </li>
+		    </ul>
+		    
+		  </div><!-- /.navbar-collapse -->
+		</nav> <!-- End navbar -->
+
+
 		<div class="content">
 			<div class="news-list" >
-				<div class="news-item" ng-repeat="item in news">	
-					<p ng-bind="item.Title" ng-click="showInPreview(item.Url)"></p>
+				<div class="news-item" ng-repeat="article in articles">	
+					<p ng-bind="article.Title" ng-click="showInPreview(article)"></p>
 				</div>
 			</div> <!-- news-list -->
 			
@@ -38,14 +81,3 @@
 		</div> <!-- content -->
 </body>
 </html>
-
-
-<!-- Nav bar configurations. Do an animation between them 
-
-Hacker news | Reddit | RSS
-< | Hacker news  (drop down 20, 50, 100, 200, 500...)
-< | Reddit       (drop down subredits)
- -->
-
-
-

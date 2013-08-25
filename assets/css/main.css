@@ -8,6 +8,31 @@ body {
 iframe {
 	width:100%;
 	height:100%;
+	border: none;
+}
+
+.remove-subreddit {
+	float:right;
+	opacity:0.1;
+}
+
+.remove-subreddit:hover {
+	opacity: 1;
+}
+
+.subreddit-input {
+	color: white;
+	-webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+  -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+  background: #202020;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 0;
+}
+
+.navbar {
+	border-radius: 0px;
+	margin:0px;
 }
 
 .content {
@@ -17,8 +42,6 @@ iframe {
 
 .menu-bar {
 	width:100%;
-	padding:10px;
-	background-color: #333;
 }
 
 .news-list {
@@ -26,12 +49,14 @@ iframe {
 	display:inline-block;
 	background-color:#ddd;	
 	overflow: scroll;
+	padding-top:5px;
 	width:300px;
 	height:100%;
 }
 
 .news-item{
-	padding:0 15px ;
+	padding:5px 15px;
+	vertical-align: middle;
 }
 
 .preview {
@@ -40,3 +65,39 @@ iframe {
 	background-color:#fff;	
 	height: 100%;
 }
+
+
+
+
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #666666;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #666666;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #666666;
+}
+
+input[type="text"]:-moz-placeholder {
+  color: #666666;
+}
+
+input[type="text"]:-ms-input-placeholder {
+  color: #666666;
+}
+
+input[type="text"]::-webkit-input-placeholder{
+  color: #666666;
+}
+
+
+
+
+
+
+
