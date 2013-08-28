@@ -24,6 +24,11 @@ function NewsController($scope) {
   		title: 'RSS ',
   		url: "http://api.ihackernews.com/page", 
   		type: 'rss'
+  	}, 
+  	{
+  		title: "Scraped Websites", 
+  		url: "",
+  		type: "scrape"
   	}
   ]
   
@@ -38,8 +43,8 @@ function NewsController($scope) {
 			 	if (!$scope.$$phase) {
 	        $scope.$apply();
 	        $type = $scope.source.type;
-	      }  
-		  });
+	    	}  
+			});
 	};
 
 	$scope.loadSubreddit = function(subreddit) {
@@ -48,22 +53,29 @@ function NewsController($scope) {
 	}	
 
 	$scope.showInPreview = function(article) { 
+		// $.get('/scrape', { url: article.Url})
+		//   .done(function(data) {
+		//   	$('.preview').append(data)
+		// 	});
 		window.frames.preview.location.replace(article.Url);
+		//console.log(window.frames.preview);
 	};	
 
 	$scope.setSource = function(new_source) {
 		if($scope.source.type !== new_source) {
 			switch(new_source) {
+				case "hackerNews": 
+					$scope.source = $scope.news[0];
+					break;
 				case  "reddit":
 					$scope.source = $scope.news[1];
 					$scope.source.default_subreddit = $scope.news[1].subreddit[0];
 					break;
-				case "hackerNews": 
-					$scope.source = $scope.news[0];
-					break;
 				case "rss":
 					$scope.source = $scope.news[2];
 					break;
+				case "scrape":
+					$scope.source = $scope.news[3]
 			}
 			$scope.refresh() 
 		} // if source needs to change

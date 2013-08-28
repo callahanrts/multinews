@@ -8,5 +8,4 @@ window.onload = function() {
 	}).resize();
 
 	$('.add-subreddit').css('padding-left', 0);
-
 }

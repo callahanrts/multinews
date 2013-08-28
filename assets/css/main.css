@@ -102,6 +102,7 @@ iframe {
 	float:right;
 	background-color:#fff;	
 	height: 100%;
+	overflow:scroll;
 }
 
 
