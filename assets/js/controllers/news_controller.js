@@ -26,9 +26,9 @@ function NewsController($scope) {
   		type: 'rss'
   	}, 
   	{
-  		title: "Scraped Websites", 
+  		title: "Scraped Websites ", 
   		url: "",
-  		type: "scrape"
+  		type: "scrape", 
   	}
   ]
   
