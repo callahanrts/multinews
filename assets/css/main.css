@@ -30,6 +30,16 @@ iframe {
   border: 0;
 }
 
+.subreddit {
+}
+
+.remove-subreddit {
+	float:right;
+	padding: 5px;
+	padding-right:8px;
+	cursor: pointer;
+}
+
 .navbar {
 	border-radius: 0px;
 	margin:0px;

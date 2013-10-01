@@ -46,7 +46,9 @@
 		        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><span ng-bind="source.default_subreddit.title"></span><b class="caret"></b></a>
 		        <ul class="dropdown-menu">
 		        	<li ng-repeat="item in source.subreddit">
-		        		<a href="javascript:void(0)" ng-click="loadSubreddit(item)"><span ng-bind="item.title"></span><span class="remove-subreddit glyphicon glyphicon-remove" ng-click="removeSubreddit(item)"></span></a>
+		        		<a href="javascript:void(0)" ng-click="loadSubreddit(item)" class="subreddit">
+		        			<span ng-bind="item.title"></span>
+		        		</a>
 		        	</li>
 		        </ul>
 		      </li> <!-- pick a subreddit dropdown -->
