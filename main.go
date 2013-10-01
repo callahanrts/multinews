@@ -43,7 +43,7 @@ func newsHandler(w http.ResponseWriter, r *http.Request) {
 	t := r.FormValue("type")
 	a, err := newsItems.Get(u, t)
 	if err != nil {
-		fmt.Fprintf(w, "Error getting news items (main.go): ")
+		fmt.Fprintf(w, "Error getting news items (main.go): \n\n %s", err)
 	}
 	
 	b, _ := json.Marshal(a)
