@@ -1,10 +1,10 @@
 function NewsController($scope) {
   $scope.news = [
   	{
-  		title: 'Hacker News ',
+  		title: 'Hacker News (sometimes works)',
   		url: "http://api.ihackernews.com/page", 
   		type: 'hackerNews'
-  	}, 
+  	},
   	{
   		title: 'Reddit ',
   		url: "http://www.reddit.com/r/programming/.json", 
@@ -19,20 +19,18 @@ function NewsController($scope) {
 					url: '/r/pics/.json'
 				} 
 			]
-  	}, 
+  	},  
   	{
-  		title: 'RSS ',
+  		title: 'RSS (in progress)',
   		url: "http://api.ihackernews.com/page", 
   		type: 'rss'
   	}, 
   	{
-  		title: "Scraped Websites ", 
+  		title: "Scraped Websites (in progress)", 
   		url: "",
   		type: "scrape", 
   	}
   ]
-  
-  $scope.source = $scope.news[0];
 
 	$scope.getNews = function(new_url) {
 		var url = new_url || $scope.source.url
@@ -98,5 +96,11 @@ function NewsController($scope) {
 		$scope.getNews();
 	}
 
-	//TODO: load default list of articles
+	//TODO: later, store preferences in local storage to 
+	//      load the users' preferred default news source
+	// Also, find out why set source isn't working here and use it instead
+	// too much repetition here
+	$scope.source = $scope.news[1];
+  $scope.source.default_subreddit = $scope.news[1].subreddit[0];
+  $scope.refresh(); 
 }
