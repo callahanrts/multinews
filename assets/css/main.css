@@ -66,6 +66,7 @@ iframe {
 
 	cursor:pointer;
 }
+.active, 
 .news-item:hover{
 	background-color:#ccc;
 }
