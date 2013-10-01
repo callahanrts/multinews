@@ -60,7 +60,7 @@ function NewsController($scope) {
 	};	
 
 	$scope.setSource = function(new_source) {
-		if($scope.source.type !== new_source) {
+		if(!$scope.source || $scope.source.type !== new_source) {
 			switch(new_source) {
 				case "hackerNews": 
 					$scope.source = $scope.news[0];
@@ -98,9 +98,5 @@ function NewsController($scope) {
 
 	//TODO: later, store preferences in local storage to 
 	//      load the users' preferred default news source
-	// Also, find out why set source isn't working here and use it instead
-	// too much repetition here
-	$scope.source = $scope.news[1];
-  $scope.source.default_subreddit = $scope.news[1].subreddit[0];
-  $scope.refresh(); 
+	$scope.setSource("reddit");
 }

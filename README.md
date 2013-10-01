@@ -13,7 +13,7 @@ Installation
 --------------
 
 ```sh
-git clone [git-repo-url] multinews
+git clone git@github.com:callahanrts/multinews.git multinews
 cd multinews
 ./multinews
 ```
