@@ -1,7 +1,7 @@
 Multinews
 =========
 
-Multinews is a news aggregator written in GO that allows you to storea all of your favorite news sources in a single location and easily switch between them. 
+Multinews is a news aggregator written in GO that allows you to store all of your favorite news sources in a single location and easily switch between them. 
 
   - Reddit
     - Manage subreddits
