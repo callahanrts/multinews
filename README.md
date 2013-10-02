@@ -1,7 +1,7 @@
 Multinews
 =========
 
-Multinews is a news aggregator written in GO that allows you to store all of your favorite news sources in a single location and easily switch between them. 
+Multinews is a news aggregator written in Go that allows you to store all of your favorite news sources in a single location and easily switch between them. 
 
   - Reddit
     - Manage subreddits
@@ -14,7 +14,7 @@ Note: Currently, some websites do not allow themselves to be displayed in an ifr
 
 Purpose 
 -------
-To get familiar with GO and Angular.js while building an interesting and fun application. 
+To get familiar with Go and Angular.js while building an interesting and fun application. 
 
 Installation
 --------------
