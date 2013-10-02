@@ -22,7 +22,7 @@ function NewsController($scope) {
   	},  
   	{
   		title: 'RSS (in progress)',
-  		url: "http://api.ihackernews.com/page", 
+  		url: "", 
   		type: 'rss'
   	}, 
   	{
@@ -34,10 +34,12 @@ function NewsController($scope) {
 
 	$scope.getNews = function(new_url) {
 		var url = new_url || $scope.source.url
+		$scope.loaded = false;
 		$scope.articles = [];
 		$.get('/news', { url: url, type: $scope.source.type })
 		  .done(function(data) {
 			 	$scope.articles = JSON.parse(data);
+			 	$scope.loaded = true;
 			 	if (!$scope.$$phase) {
 	        $scope.$apply();
 	        $type = $scope.source.type;
@@ -50,6 +52,8 @@ function NewsController($scope) {
 		$scope.source.default_subreddit = subreddit;
 	}	
 
+	// NOTE: Sometimes items wont load in iframe. This is a security feature of websites. 
+	// Figure out how to display an error or something later maybe
 	$scope.showInPreview = function(article) { 
 		window.frames.preview.location.replace(article.Url);
 	};	

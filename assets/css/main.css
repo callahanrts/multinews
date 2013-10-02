@@ -1,4 +1,16 @@
-
+.actionBar{
+	z-index:2; 
+	position:absolute; 
+	left:0; 
+	top:0; 
+	background-color:#444; 
+	padding:5px 35px !important; 
+	color:#ddd;
+	width:300px;
+	opacity:0.95;
+}
+.actionBar a{color:#999; cursor:pointer;}
+.actionBar a:hover{color:#fff;cursor:pointer;}
 body {
 	padding: 0;
 	margin: 0;
@@ -12,12 +24,18 @@ iframe {
 	height:100%;
 	border: none;
 }
-
+.loading {
+	text-align: center;
+}
+.pageNavigation {
+	text-align: center;
+}
 .remove-subreddit {
 	float:right;
 	opacity:0.1;
 }
-
+.prev{float:left;}
+.next{float:right;}
 .remove-subreddit:hover {
 	opacity: 1;
 }
@@ -48,6 +66,7 @@ iframe {
 }
 
 .content {
+	position:relative;
 	height:100%;
 	width:100%;
 }
@@ -117,7 +136,7 @@ iframe {
 	height: 100%;
 	overflow:scroll;
 }
-
+.spacer{height:30px;width:1px;}
 
 
 

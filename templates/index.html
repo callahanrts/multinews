@@ -49,7 +49,7 @@
 		        	</li>
 		        	<li class="divider"></li>
 		        	<li>
-		        		<a href="javascript:void(0)" ng-click="loadSubreddit(item)" class="subreddit">
+		        		<a data-toggle="modal" href="#myModal" class="subreddit">
 		        			<span>Add Subreddit</span>
 		        		</a>
 		        	</li>
@@ -75,7 +75,10 @@
 
 
 		<div class="content">
+			<!-- Loading bar -->
+			<div class="actionBar" ng-hide="loaded"><div class="loading"><img src="assets/images/ajax-loader.gif" /></div></div>
 			<div class="news-list" >
+				<div class="spacer" ng-hide="loaded"></div>
 				<div class="news-item" ng-repeat="article in articles" ng-click="showInPreview(article)">	
 					<p class="news-title" ng-bind="article.Title"></p>
 					<div class="hackerNewsItem" ng-hide="source.type != 'hackerNews'">
@@ -115,5 +118,29 @@
 				<iframe src="" name="preview"></iframe>
 			</div> <!-- preview -->
 		</div> <!-- content -->
+
+
+		<!-- Modal -->
+	  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	          <h4 class="modal-title">Add subreddit as news source</h4>
+	        </div>
+	        <div class="modal-body">
+	          <div class="input-group">
+						  <span class="input-group-addon">/r/</span>
+						  <input type="text" class="form-control" placeholder="Subreddit" ng-model="input_subreddit">
+						</div>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+	          <button type="button" class="btn btn-primary" ng-click="addSubreddit()" data-dismiss="modal">Save</button>
+	        </div>
+	      </div><!-- /.modal-content -->
+	    </div><!-- /.modal-dialog -->
+	  </div><!-- /.modal -->
+
 </body>
 </html>
