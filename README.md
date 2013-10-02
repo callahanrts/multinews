@@ -12,8 +12,7 @@ Purpose
 -------
 To get familiar with GO and Angular.js while building an interesting and fun application. 
 
-//TODO: Add an image here
-//![alt tag](https://raw.github.com/username/projectname/branch/path/to/img.png)
+![alt tag](https://raw.github.com/callahanrts/multinews/master/assets/images/screen_shot.png)
 
 Installation
 --------------
