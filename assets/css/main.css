@@ -5,6 +5,8 @@ body {
 	overflow:hidden;
 }
 
+.dropdown-menu .divider { margin: 5px 0; }
+
 iframe {
 	width:100%;
 	height:100%;

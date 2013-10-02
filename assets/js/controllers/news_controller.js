@@ -51,12 +51,7 @@ function NewsController($scope) {
 	}	
 
 	$scope.showInPreview = function(article) { 
-		// $.get('/scrape', { url: article.Url})
-		//   .done(function(data) {
-		//   	$('.preview').append(data)
-		// 	});
 		window.frames.preview.location.replace(article.Url);
-		//console.log(window.frames.preview);
 	};	
 
 	$scope.setSource = function(new_source) {
