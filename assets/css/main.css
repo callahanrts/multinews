@@ -11,35 +11,16 @@
 }
 .actionBar a{color:#999; cursor:pointer;}
 .actionBar a:hover{color:#fff;cursor:pointer;}
-body {
-	padding: 0;
-	margin: 0;
-	overflow:hidden;
-}
-
+body { padding: 0; margin: 0; overflow:hidden; }
 .dropdown-menu .divider { margin: 5px 0; }
-
-iframe {
-	width:100%;
-	height:100%;
-	border: none;
-}
-.loading {
-	text-align: center;
-}
-.pageNavigation {
-	text-align: center;
-}
-.remove-subreddit {
-	float:right;
-	opacity:0.1;
-}
+iframe { width:100%; height:100%; border: none; }
+.loading { text-align: center; }
+.loading-preview{ width:100%; background-color:#444; padding:7px 35px; }
+.pageNavigation { text-align: center; }
+.remove-subreddit { float:right; opacity:0.1; }
 .prev{float:left;}
 .next{float:right;}
-.remove-subreddit:hover {
-	opacity: 1;
-}
-
+.remove-subreddit:hover { opacity: 1; }
 .subreddit-input {
 	color: white;
 	-webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
@@ -49,32 +30,15 @@ iframe {
   background-color: rgba(0, 0, 0, 0.3);
   border: 0;
 }
-
-.subreddit {
-}
-
 .remove-subreddit {
 	float:right;
 	padding: 5px;
 	padding-right:8px;
 	cursor: pointer;
 }
-
-.navbar {
-	border-radius: 0px;
-	margin:0px;
-}
-
-.content {
-	position:relative;
-	height:100%;
-	width:100%;
-}
-
-.menu-bar {
-	width:100%;
-}
-
+.navbar { border-radius: 0px; margin:0px; }
+.content { position:relative; height:100%; width:100%; }
+.menu-bar { width:100%; }
 .news-list {
 	float:left;
 	display:inline-block;
@@ -83,7 +47,6 @@ iframe {
 	width:300px;
 	height:100%;
 }
-
 .news-item{
 	position:relative;
 	padding:5px 15px;
@@ -97,18 +60,13 @@ iframe {
 
 	cursor:pointer;
 }
-.active, 
-.news-item:hover{
-	background-color:#ccc;
-}
-
+.active, .news-item:hover{ background-color:#ccc; }
 .news-title {
 	max-height:42px;
 	line-height:20px;
 	overflow:hidden;
 	margin:0;
 }
-
 .news-secondary {
 	position:absolute;
 	margin:0;
@@ -116,7 +74,6 @@ iframe {
 	color: #777;
 	bottom: 10px;
 }
-
 .news-author {
 	margin:0;
 	float:left;
@@ -124,11 +81,7 @@ iframe {
 	color: #777;
 	max-width:215px;
 }
-
-.pts {
-	margin-right:20px;
-}
-
+.pts { margin-right:20px; }
 .preview {
 	display:inline-block;
 	float:right;
@@ -138,37 +91,9 @@ iframe {
 }
 .spacer{height:30px;width:1px;}
 
-
-
-
-input:-moz-placeholder,
-textarea:-moz-placeholder {
-  color: #666666;
-}
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: #666666;
-}
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: #666666;
-}
-
-input[type="text"]:-moz-placeholder {
-  color: #666666;
-}
-
-input[type="text"]:-ms-input-placeholder {
-  color: #666666;
-}
-
-input[type="text"]::-webkit-input-placeholder{
-  color: #666666;
-}
-
-
-
-
-
-
-
+input:-moz-placeholder, textarea:-moz-placeholder { color: #666666; }
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { color: #666666; }
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #666666; }
+input[type="text"]:-moz-placeholder { color: #666666; }
+input[type="text"]:-ms-input-placeholder { color: #666666; }
+input[type="text"]::-webkit-input-placeholder{ color: #666666; }

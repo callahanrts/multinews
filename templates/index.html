@@ -49,7 +49,7 @@
 		        	</li>
 		        	<li class="divider"></li>
 		        	<li>
-		        		<a data-toggle="modal" href="#myModal" class="subreddit">
+		        		<a data-toggle="modal" href="#addSubredditModal" class="subreddit">
 		        			<span>Add Subreddit</span>
 		        		</a>
 		        	</li>
@@ -115,13 +115,15 @@
 			</div> <!-- news-list -->
 			
 			<div class="preview">
-				<iframe src="" name="preview"></iframe>
+				<!-- Display ajax loader until iframe loads--figure out how to test loading with iframe -->
+				<!-- <div class="loading loading-preview" ng-hide="!loadingPreview"><img src="assets/images/ajax-loader.gif" /></div> -->
+				<iframe id="preview" src="" name="preview"></iframe>
 			</div> <!-- preview -->
 		</div> <!-- content -->
 
 
 		<!-- Modal -->
-	  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal fade" id="addSubredditModal" tabindex="-1" role="dialog" aria-labelledby="addSubreddit" aria-hidden="true">
 	    <div class="modal-dialog">
 	      <div class="modal-content">
 	        <div class="modal-header">
