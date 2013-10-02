@@ -8,11 +8,13 @@ Multinews is a news aggregator written in GO that allows you to storea all of yo
   - Hacker News
   - RSS
 
+Note: Currently, some websites do not allow themselves to be displayed in an iframe. This is something that is intended to be dealt with in other ways down the road. 
+
+![alt tag](https://raw.github.com/callahanrts/multinews/master/assets/images/screen_shot.png)
+
 Purpose 
 -------
 To get familiar with GO and Angular.js while building an interesting and fun application. 
-
-![alt tag](https://raw.github.com/callahanrts/multinews/master/assets/images/screen_shot.png)
 
 Installation
 --------------
